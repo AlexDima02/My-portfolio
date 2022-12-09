@@ -1,0 +1,389 @@
+body{
+
+    overflow: visible;
+
+
+}
+
+
+.short-about-col{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+
+}
+
+.big-title{
+
+    width: 50%;
+    border: 1px solid red;
+    font-size: 3rem;
+
+}
+
+.big-picture{
+
+    min-width: 300px;
+    height: auto;
+    margin: 2rem 0;
+
+
+}
+
+.image{
+
+    width: 500px;
+    height: auto;
+
+}
+
+.country-details{
+
+    font-size: 4rem;
+    width: 40%;
+    font-weight: bold;
+
+}
+
+.description-container{
+
+    font-size: 1.5rem;
+    width: 50%;
+    margin-top: 4rem;
+
+}
+
+.services-container{
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+
+}
+
+.service-info{
+
+    border-top: 2px solid rgb(79, 79, 79);
+    line-height: 7rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+
+}
+
+.service-info .number{
+
+    padding-right: 5rem;
+
+
+}
+
+.service-headline{
+
+    font-size: 8rem;
+    margin-bottom: 5rem;
+    
+}
+
+/* Row layout  */
+.container-project{
+
+    display: flex;
+    flex-direction: row;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: flex-start;
+    border: 1px solid red;
+}
+
+.headline-container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 2rem;
+
+
+}
+
+.interest-carousel{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 6rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+
+}
+
+.hobby-info{
+
+    width: 40%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hobby-info p{
+
+    padding-bottom: 1.5rem;
+
+}
+
+/* Work page */
+
+.section-name{
+    
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15rem;
+
+}
+
+.headline-projects h1{
+
+    font-size: 8rem;
+    margin-bottom: 4rem;
+
+}
+
+.title-description{
+
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    border: 1px solid red;
+    font-size: 1.5rem;
+}
+
+.title-description p{
+
+    width: 70%;
+
+}
+
+/* Contact page */
+
+
+
+/* Responsive mobile */
+
+@media (max-width: 768px) {
+    
+    
+    .section-name{
+
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+    
+    .headline-projects h1{
+    
+        font-size: 3rem;
+        width: 100%;
+    
+    }
+    
+    .title-description{
+    
+       font-size: 16px;
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+    }
+    
+    .title-description p{
+    
+        width: 100%;
+        padding-top: 1rem;
+        width: 100%;
+    }
+
+    /* About me responsive page */
+    
+    .container{
+
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        margin: 0 auto;
+
+
+    }
+
+
+    .short-about-col{
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    
+    
+    }
+    
+    .big-title{
+    
+        width: 100%;
+        border: 1px solid red;
+        font-size: 2rem;
+    
+    }
+    
+    .big-picture{
+    
+        max-width: 300px;
+        height: auto;
+        margin: 2rem 0;
+    
+    
+    }
+    
+    .image{
+    
+        width: 100%;
+        height: auto;
+    
+    }
+    
+    .country-details{
+    
+        font-size: 2rem;
+        width: 100%;
+        font-weight: bold;
+    
+    }
+    
+    .description-container{
+    
+        font-size: 1rem;
+        width: 100%;
+        margin-top: 4rem;
+    
+    }
+    
+    .services-container{
+        
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid red;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+    
+    }
+    
+    .service-info{
+    
+        border-top: 2px solid rgb(79, 79, 79);
+        line-height: 2.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 2rem;
+        font-size: 1rem;
+    
+    }
+    
+    .service-info .number{
+    
+        padding-right: 5rem;
+        display: none;
+    
+    }
+    
+    .service-headline{
+    
+        font-size: 4rem;
+        margin-bottom: 3rem;
+        
+    }
+    
+    /* Row layout  */
+    .container-project{
+    
+        display: flex;
+        flex-direction: column;
+        max-width: 1300px;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: flex-start;
+        border: 1px solid red;
+    }
+
+    .container_reverse{
+
+        display: flex;
+        flex-direction: column-reverse;
+
+
+    }
+    
+    .headline-container{
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 2rem;
+        width: 100%;
+    
+    }
+
+    
+    
+    .interest-carousel{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 4rem;
+        font-weight: bold;
+        margin-top: 2rem;
+        margin-bottom: 10rem;
+    
+    }
+    
+    .hobby-info{
+    
+        width: 100%;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    
+    #heading{
+
+        width: 100%;
+        border: 1px solid red;
+        font-size: 24px;
+        padding-right: 2rem;
+        
+    }
+
+    #mobile-delete{
+
+        display: none;
+
+    }
+
+}
