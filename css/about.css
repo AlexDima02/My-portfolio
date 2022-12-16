@@ -21,7 +21,7 @@ body{
     width: 50%;
     border: 1px solid red;
     font-size: 3rem;
-
+   
 }
 
 .big-picture{
@@ -116,15 +116,31 @@ body{
 
 }
 
+/* Carousel options */
+
 .interest-carousel{
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    font-size: 6rem;
+    justify-content: flex-start;
+    font-size: 8rem;
     font-weight: bold;
     margin-top: 2rem;
     margin-bottom: 10rem;
+    
+}
+
+.item{
+
+    margin: 0 2rem;
+    opacity: 0.3;
+    cursor: pointer;
+
+}
+
+.item:hover{
+
+    opacity: 0.4;
 
 }
 
@@ -135,11 +151,30 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+  
 }
 
 .hobby-info p{
 
     padding-bottom: 1.5rem;
+
+}
+
+#slide1{
+
+   
+
+}
+
+#slide2{
+
+   display: none;
+
+}
+
+#slide3{
+
+    display: none;
 
 }
 
@@ -175,7 +210,25 @@ body{
 
 }
 
+/* Animate each letter */
+
+.big-text-letter{
+
+    opacity: 1;
+    animation: bottom-top 1s ease-in-out var(--delay);
+    display: inline-block;
+    transform: translateY(0px);
+    animation-iteration-count: 1;
+
+
+
+}
+
 /* Contact page */
+
+
+
+
 
 
 

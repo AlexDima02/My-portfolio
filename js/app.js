@@ -19,6 +19,9 @@ const loader = document.querySelector('#pre-loader');
 const loaderPercentage = document.querySelector('.pre-loader-percentage');
 const removeHeader = document.querySelector('header');
 const removeBody = document.querySelector('main');
+const showcaseContainer = document.querySelector('.project-showcase-container');
+const closeContainer = document.querySelector('.close-tab');
+const photoSwiper = document.querySelector('.project-photos');
 
 // Cursor 
 
@@ -88,7 +91,6 @@ descText.addEventListener('mouseout', () => {
 });
 
 // Hover over project headlines
-
 everyTitle.forEach((title) => {
 
     title.addEventListener('mouseover', (e) => {
@@ -121,6 +123,28 @@ everyTitle.forEach((title) => {
     })
     
 })
+
+// Click on project headlines
+everyTitle.forEach((title) => {
+
+    
+    title.addEventListener('click', (e) => {
+        
+        e.preventDefault();
+        showcaseContainer.classList.toggle('active');
+        
+    })
+
+})
+
+// Close project showcase
+closeContainer.addEventListener('click', () => {
+
+    showcaseContainer.classList.remove('active');
+    
+
+})
+
 
 
 // Hover over show more btns
@@ -212,7 +236,7 @@ window.addEventListener('load', () => {
         }
         
 
-    }, 700);
+    }, 0);
                     
 
 });
@@ -357,7 +381,6 @@ function reveal(){
 
 // Reveal every letter animation    
 // Takes every span and put a class on it in order to animate each letter
-
 function onDelay(parent){
 
     if(parent.classList.contains('active')){
@@ -442,6 +465,30 @@ function cursor(e){
 
 
 }
+
+// Scroll horizontally on the showcase tab
+// Based on the scroll diretion, move my photo container
+// If deltaY < 0,scroll up and move the container to the left with transform
+// If deltaX > 0, scroll down and move the container to the right with transform
+showcaseContainer.addEventListener('wheel', (e) => {
+    let number = 200 
+    e.preventDefault();
+    console.log(e);
+    if(e.deltaY > 0){
+        
+        number -= 200;
+       photoSwiper.style.transform = `translateX(${number}px)`
+
+    }else{
+
+        number += 500;
+        photoSwiper.style.transform = `translateX(${number}px)`
+
+
+    }
+   
+  
+});
 
 // Mobile menu tab functionality
 function menuTab(){
