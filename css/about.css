@@ -20,7 +20,7 @@ body{
 
     width: 50%;
     border: 1px solid red;
-    font-size: 3rem;
+    font-size: 4rem;
    
 }
 
@@ -43,16 +43,16 @@ body{
 .country-details{
 
     font-size: 4rem;
-    width: 40%;
+    width: 50%;
     font-weight: bold;
-
+    padding-bottom: 2rem;
 }
 
 .description-container{
 
     font-size: 1.5rem;
     width: 50%;
-    margin-top: 4rem;
+   
 
 }
 
@@ -73,11 +73,88 @@ body{
     line-height: 7rem;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 2rem 2rem;
     font-size: 1.5rem;
 
+}
+
+.top-header{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.open-tab{
+
+    position: relative;
+    cursor: pointer;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-window1{
+
+    opacity: 0;
+    height: 0px;
+    transition: all 0.5s ease-in;
+
+}
+.bottom-window2{
+
+    opacity: 0;
+    height: 0px;
+    transition: all 0.5s ease-out;
+
+}
+
+.bottom-window1.active{
+
+    opacity: 1;
+    height: auto;
+    background-color: red;
+    
+}
+
+.bottom-window2.active{
+
+    opacity: 1;
+    height: auto;
+    background-color: red;
+    
+}
+
+.arrow-up{
+
+    background-color: black;
+    height: 30px;
+    width: 3px;
+    transition: all 0.5s ease;
+    transform: translate(-50%);
+    position: absolute;
+
+}
+
+.arrow-up.active{
+
+    transform: rotate(90deg);
+    
+}
+
+.arrow-middle{
+
+    background-color: black;
+    width: 3px;
+    height: 30px;
+    transform: rotate(90deg);
+    
+    
 }
 
 .service-info .number{
@@ -99,8 +176,6 @@ body{
 
     display: flex;
     flex-direction: row;
-    max-width: 1300px;
-    width: 100%;
     margin: 0 auto;
     justify-content: flex-start;
     border: 1px solid red;
@@ -112,8 +187,17 @@ body{
     flex-direction: row;
     justify-content: space-between;
     font-size: 2rem;
+    width: 100%;
+    
+}
 
+#mobile-delete{
 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    
 }
 
 /* Carousel options */
@@ -184,24 +268,36 @@ body{
     
     display: flex;
     flex-direction: row;
-    margin-bottom: 15rem;
-
+    margin-bottom: 10rem;
+    border: 1px solid red;
 }
+
+
+.headline-projects{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10rem;
+    width: 100%;
+}
+
 
 .headline-projects h1{
 
     font-size: 8rem;
     margin-bottom: 4rem;
-
+    
 }
 
 .title-description{
 
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 60%;
     border: 1px solid red;
     font-size: 1.5rem;
+    
 }
 
 .title-description p{
@@ -349,9 +445,9 @@ body{
         line-height: 2.5rem;
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        padding: 0 2rem;
+        padding: 2rem 2rem;
         font-size: 1rem;
     
     }
@@ -375,7 +471,7 @@ body{
     
         display: flex;
         flex-direction: column;
-        max-width: 1300px;
+        max-width: 350px;
         width: 100%;
         margin: 0 auto;
         justify-content: flex-start;
@@ -401,17 +497,17 @@ body{
     }
 
     
-    
     .interest-carousel{
     
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: space-between;
         font-size: 4rem;
         font-weight: bold;
         margin-top: 2rem;
         margin-bottom: 10rem;
-    
+        
     }
     
     .hobby-info{
@@ -430,7 +526,7 @@ body{
         border: 1px solid red;
         font-size: 24px;
         padding-right: 2rem;
-        
+        margin-left: 0;
     }
 
     #mobile-delete{
@@ -438,5 +534,7 @@ body{
         display: none;
 
     }
+
+    
 
 }

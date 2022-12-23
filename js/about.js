@@ -1,5 +1,4 @@
 const navBar = document.querySelector('.navbar');
-const navBarMobile = document.querySelector('.navbar-mobile');
 const delayText = document.querySelectorAll('.delay-text');
 const parentText = document.querySelectorAll('.parent');
 const slideWrapper = document.querySelector('.interest-carousel');
@@ -7,6 +6,7 @@ const slides = document.querySelectorAll('.item');
 const element0 = document.getElementById('0');
 const element1 = document.getElementById('1');
 const element2 = document.getElementById('2');
+
 
 // Declaring the slides
 const slide1 = document.getElementById('slide1');
@@ -16,51 +16,7 @@ const slide3 = document.getElementById('slide3');
 // Default color of the carousel 
 element0.style.color = 'red';
 
-// Project section - animation
 
-const everyTitle = document.querySelectorAll('.project-name');
-const textSpan = document.querySelector('.special-word');
-
-
-// Cursor 
-let mouseCursor = document.querySelector('.cursor');
-let cursorImage = document.querySelectorAll('.image-project');
-
-
-// Hover over project headlines
-everyTitle.forEach((title) => {
-
-    title.addEventListener('mouseover', (e) => {
-
-        const showBar = e.target.children[0];
-        
-        showBar.classList.add('active');
-
-    })
-
-    title.addEventListener('mouseout', (e) => {
-
-        const showBar = e.target.children[0];
-       
-        showBar.classList.remove('active');
-
-    })
-
-    title.addEventListener('mousemove', (e) => {
-
-        cursor(e);
-        mouseCursor.classList.add('active');
-
-    })
-
-    title.addEventListener('mouseout', (e) => {
-
-       
-        mouseCursor.classList.remove('active');
-
-    })
-    
-});
 
 const displaySlide = (e) => {
     
@@ -130,6 +86,7 @@ const moveLeft = (element, mov) => {
     
 }
 
+// Event Listeners
 
 // Reveal elements
 window.addEventListener('scroll', reveal);
@@ -142,7 +99,7 @@ window.addEventListener('click', (e) => {
 
 });
 
-// Event Listeners
+
 
 // Header space
 // Hover over the options from the header menu
@@ -165,26 +122,9 @@ navBar.addEventListener('mouseout', (bar) => {
 
 })
 
-// // Navbar-mobile options
-// navBarMobile.addEventListener('mouseover', (bar) => {
 
-    
-//     const showBar = bar.target.children[0];
-    
-//     showBar.classList.add('active');
 
-// })
 
-// navBarMobile.addEventListener('mouseout', (bar) => {
-
-//     const showBar = bar.target.children[0];
-
-    
-//     showBar.classList.remove('active');
-
-    
-
-// })
 
 // Functionalities
 
@@ -252,6 +192,7 @@ function reveal(){
     
 }
 
+
 // Reveal each big title
 function textLoad(parent){
 
@@ -281,10 +222,6 @@ function textLoad(parent){
 // If a specific slide with a specific index is touched, start the movement of the slide to the left
 // make a translateX 
 // put the first element at the end of the carousel and reset transalteX to 0
-
-
-
-
 function carousel(e){
     // Default element that verify what we click on
     
@@ -347,32 +284,5 @@ function carousel(e){
 // If the variable has the value of an element like element
 // Display block the slides according to the option slected
 
-// Cursor animation
-cursorImage.forEach((image) => {
-    
-    image.addEventListener('mousemove', (e) => {
-        
-        cursor(e);
-        mouseCursor.classList.add('active');
-        
 
-    });
-
-    image.addEventListener('mouseout', () => {
-
-        mouseCursor.classList.remove('active');
-       
-    });
-
-});
-
-
-// Moving the cursor
-function cursor(e){
-    
-    mouseCursor.style.top = e.pageY + 'px';
-    mouseCursor.style.left = e.pageX + 'px';
-
-
-}
 

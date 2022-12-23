@@ -10,23 +10,13 @@ const everyTitle = document.querySelectorAll('.project-name');
 const delayText = document.querySelectorAll('.delay-text');
 const text = document.querySelectorAll('.slide-name');
 const gamingText = document.querySelectorAll('#hobby');
-const menuIcon = document.querySelector('.option-mobile');
-const containerMenu = document.querySelector('.navbar-mobile');
-const closeTab = document.querySelector('#close-tab');
-const logo = document.querySelector('.logo');
-const menu = document.querySelector('.flex-container');
+
 const loader = document.querySelector('#pre-loader');
 const loaderPercentage = document.querySelector('.pre-loader-percentage');
 const removeHeader = document.querySelector('header');
 const removeBody = document.querySelector('main');
-const showcaseContainer = document.querySelector('.project-showcase-container');
-const closeContainer = document.querySelector('.close-tab');
-const photoSwiper = document.querySelector('.project-photos');
 
-// Cursor 
 
-let mouseCursor = document.querySelector('.cursor');
-let cursorImage = document.querySelectorAll('.image-project');
 
 
 // Event Listeners
@@ -52,26 +42,7 @@ navBar.addEventListener('mouseout', (bar) => {
 
 })
 
-// Navbar-mobile options
-navBarMobile.addEventListener('mouseover', (bar) => {
 
-    
-    const showBar = bar.target.children[0];
-    
-    showBar.classList.add('active');
-
-})
-
-navBarMobile.addEventListener('mouseout', (bar) => {
-
-    const showBar = bar.target.children[0];
-
-    
-    showBar.classList.remove('active');
-
-    
-
-})
 
 // Body space
 // Hover over the text
@@ -90,60 +61,6 @@ descText.addEventListener('mouseout', () => {
 
 });
 
-// Hover over project headlines
-everyTitle.forEach((title) => {
-
-    title.addEventListener('mouseover', (e) => {
-
-        const showBar = e.target.children[0];
-        
-        showBar.classList.add('active');
-
-    })
-
-    title.addEventListener('mouseout', (e) => {
-
-        const showBar = e.target.children[0];
-       
-        showBar.classList.remove('active');
-
-    })
-
-    title.addEventListener('mousemove', (e) => {
-
-        cursor(e);
-        mouseCursor.classList.add('active');
-
-    })
-    title.addEventListener('mouseout', (e) => {
-
-       
-        mouseCursor.classList.remove('active');
-
-    })
-    
-})
-
-// Click on project headlines
-everyTitle.forEach((title) => {
-
-    
-    title.addEventListener('click', (e) => {
-        
-        e.preventDefault();
-        showcaseContainer.classList.toggle('active');
-        
-    })
-
-})
-
-// Close project showcase
-closeContainer.addEventListener('click', () => {
-
-    showcaseContainer.classList.remove('active');
-    
-
-})
 
 
 
@@ -242,24 +159,6 @@ window.addEventListener('load', () => {
 });
 
 
-menuIcon.addEventListener('click', (e) => {
-    e.preventDefault();
-    menuTab();
-    logoDelay();
-});
-
-closeTab.addEventListener('click', () => {
-
-    containerMenu.classList.remove('active');
-    closeTab.classList.remove('active');
-    menuIcon.classList.remove('active');
-    document.body.style.overflow = 'auto';
-    logo.style.color = 'black';
- 
-   
-})
-
-
 
 
 // Functionalities
@@ -336,12 +235,7 @@ function reveal(){
     
                 text[i].classList.add('active');
                 onDelay(text[i]);
-                if (window.sessionStorage.getItem('Header')) {
-                
-                    document.querySelector('#heading').classList.remove('letter');
-                
-                }
-                
+
             }else{
         
                 text[i].classList.remove('active');
@@ -394,7 +288,7 @@ function onDelay(parent){
         
         }).join('');
     
-    
+        
         });
 
         
@@ -403,25 +297,7 @@ function onDelay(parent){
 
 }
 
-// Reveal each letter from the logo
 
-function logoDelay(){
-
-
-    if(containerMenu.classList.contains('active')){
-
-       
-
-        logo.children[0].innerHTML = logo.children[0].innerText.split('').map((letter, index) => {
-
-
-            return `<span class='logo-letter' style='--delay: ${index * 100}ms'>${letter}</span>`
-
-        }).join('');
-    
-    
-    }
-}
 
 // Reveal numbers percentage with delay
 
@@ -438,91 +314,11 @@ function numberDelay(){
 
 }
 
-// Cursor animation
-cursorImage.forEach((image) => {
-
-    image.addEventListener('mousemove', (e) => {
-        
-        cursor(e);
-        mouseCursor.classList.add('active');
-        
-
-    });
-
-    image.addEventListener('mouseout', () => {
-
-        mouseCursor.classList.remove('active');
-
-    });
-
-});
-
-// Moving the cursor
-function cursor(e){
-
-    mouseCursor.style.top = e.pageY + 'px';
-    mouseCursor.style.left = e.pageX + 'px';
 
 
-}
-
-// Scroll horizontally on the showcase tab
-// Based on the scroll diretion, move my photo container
-// If deltaY < 0,scroll up and move the container to the left with transform
-// If deltaX > 0, scroll down and move the container to the right with transform
-showcaseContainer.addEventListener('wheel', (e) => {
-    let number = 200 
-    e.preventDefault();
-    console.log(e);
-    if(e.deltaY > 0){
-        
-        number -= 200;
-       photoSwiper.style.transform = `translateX(${number}px)`
-
-    }else{
-
-        number += 500;
-        photoSwiper.style.transform = `translateX(${number}px)`
 
 
-    }
-   
-  
-});
 
-// Mobile menu tab functionality
-function menuTab(){
-    // Put overflow hidden on body to prvent scrolling on x axis and y axis
-    document.body.style.overflow = 'hidden';
-    // Change the color of the logo
-    logo.style.color = 'white';
-   // Open menu tab in a slide up animation
-    containerMenu.classList.add('active');
-    menuIcon.classList.add('active');
-   if(containerMenu.classList.contains('active')){
-
-        closeTab.classList.add('active');
-       
-
-
-   }
-
-
-    
-
-}
-
-// Parallax effect based on what option we hover on
-Array.from(document.getElementsByClassName('option')).forEach((item, index) => {
-
-    item.onmouseover = () => {
-        console.log(menu);
-        menu.style.setProperty('--active-index',index);
-
-    }
-
-
-})
 
 
 // Problems:
