@@ -14,7 +14,7 @@ const slide2 = document.getElementById('slide2');
 const slide3 = document.getElementById('slide3');
 
 // Default color of the carousel 
-element0.style.color = 'red';
+element0.style.color = '#6B8E23';
 
 
 
@@ -233,7 +233,7 @@ function carousel(e){
             moveLeft(element0, -500);
             slideWrapper.appendChild(element1);  // move the first slide to the end
             slideWrapper.appendChild(element2);
-            element0.style.color = 'red';
+            element0.style.color = '#6B8E23';
              element1.style.color = 'gray';
              element2.style.color = 'gray';
              displaySlide(e);
@@ -245,7 +245,7 @@ function carousel(e){
              slideWrapper.appendChild(element2);  // move the first slide to the end
              slideWrapper.appendChild(element0);
              element0.style.color = 'gray';
-             element1.style.color = 'red';
+             element1.style.color = '#6B8E23';
              element2.style.color = 'gray';
              displaySlide(e);
         break;
@@ -256,7 +256,7 @@ function carousel(e){
             slideWrapper.appendChild(element1);
             element0.style.color = 'gray';
             element1.style.color = 'gray';
-            element2.style.color = 'red';
+            element2.style.color = '#6B8E23';
             displaySlide(e);
         break;
         

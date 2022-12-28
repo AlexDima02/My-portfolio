@@ -343,6 +343,7 @@ header .logo-letter{
     font-weight: bold;
     position: relative;
     padding: 0;
+    width: fit-content;
 }
 
 
@@ -395,8 +396,8 @@ header .logo-letter{
 
 .hover-image{
 
-    width: 300px;
-    height: 400px;
+    min-width: 300px;
+    min-height: 400px;
     border: 1px solid black;
     transform: rotate(0deg);
     position: absolute;
@@ -441,12 +442,13 @@ header .logo-letter{
 
     margin: 0 2rem;
     margin-top: 20%;
+
 }
 
 
 .container{
 
-
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -454,6 +456,16 @@ header .logo-letter{
     border: 1px solid red;
     max-width: 1300px;
     width: 100%;
+    margin: 0 auto;
+    padding: 0 1em;
+
+}
+
+.container-projects{
+
+    display: flex;
+    flex-direction: column;
+    max-width: 1300px;
     margin: 0 auto;
 
 
@@ -463,6 +475,9 @@ header .logo-letter{
 
     border: 1px solid blue;
     width: 100%;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
 
 }
 
@@ -613,24 +628,14 @@ header .logo-letter{
 
 }
 
-.slide-name .big-text-letter{
+.headline-container  .big-text-letter{
 
     padding-left: 0.4rem;
+    vertical-align: middle;
 
 }
 
-.container-projects{
 
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    max-width: 1300px;
-    width: 100%;
-    margin: 0 auto;
-
-
-
-}
 
 .slide-name{
     border: 1px solid red;
@@ -747,7 +752,7 @@ header .logo-letter{
 .small-introduction{
 
     margin: 2rem 0;
-    width: 60%;
+    width: 100%;
     font-size: 1.5rem;
 
 }
@@ -761,9 +766,10 @@ header .logo-letter{
 
 .hobby-container{
 
-    width: 100%;
+    max-width: 100%;
     border: 1px solid blue;
     height: 500px;
+    margin: 0 auto;
 }
 
 
@@ -971,10 +977,11 @@ label{
 
 #heading{
 
-    margin-left: 3rem;
+    margin-left: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
+    
 }
 
 /* Cursor */
@@ -1029,10 +1036,10 @@ label{
     transition: all 0.5s ease-in;
     display: flex;
     background-color: rgb(83, 92, 92);
-    min-height: 100vh;
+    min-height: 100%;
     min-width: 100vw;
     z-index: 99;
-    
+    overflow: auto;
 
 }
 
@@ -1041,7 +1048,7 @@ label{
     border: 2px solid red;
     margin: 0 auto;
     max-width: 1400px;
-    padding: 2rem 0;
+    padding: 2rem 2em;
 }
 
 .showcase-container_header{
@@ -1054,6 +1061,12 @@ label{
     border: 1px solid red;
    
     
+}
+
+.info a{
+
+    text-decoration: none;
+    color: white;
 }
 
 .showcase-container_header .info{
@@ -1105,28 +1118,29 @@ label{
     position: absolute;
     top: 10%;
     right: 0;
-    width: 3500px;
-    height: 100%;
+    width: 2000px;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    
+    border: 2px solid rgb(0, 255, 200);
 
 }
 
 .project-photos .photo{
 
-    width: 100%;
-    height: auto;
+    border: 1px solid red;
+    max-width: 100%;
+    max-height: auto;
     margin-left: 4rem;
 
 }
 
 .photo img{
 
-    width: 100%;
-    height: 100%;
+    max-width: 500px;
+    max-height: auto;
     object-fit: contain;
 
 
@@ -1202,6 +1216,12 @@ label{
 
 @media (max-width: 700px) {
 
+    body{
+
+
+        overflow: auto;
+
+    }
     
     section{
 
@@ -1213,6 +1233,11 @@ label{
     #heading{
 
         font-size: 24px;
+        margin-left: 0rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 1rem;
 
     }
 
@@ -1279,7 +1304,7 @@ label{
     .container-projects .slide-name{
 
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         min-width: 100%;
         /* margin-bottom: 4rem; */
         justify-content: flex-start;
@@ -1337,7 +1362,14 @@ label{
 
     .hobbies h1{
 
-        font-size: 5rem;
+        font-size: 4em;
+
+    }
+
+    .hobbies{
+
+        padding-left: 0;
+        margin-left: 0;
 
     }
 
@@ -1369,9 +1401,12 @@ label{
 
     .hero-slider,.about-slider,.projects-slide,.personal-slide,.contact-slide{
 
-        margin-bottom: 5rem;
+        margin-bottom: 10rem;
+       
 
     }
+
+    
 
     input{
 
@@ -1440,7 +1475,7 @@ label{
     .big-description p{
 
         font-size: 1.3rem;
-        margin-bottom: 2rem;
+        
 
     }
 
@@ -1455,6 +1490,8 @@ label{
     .project-link-mobile{
 
         display: block;
+        text-decoration: none;
+        color: white;
         
 
     }
@@ -1463,9 +1500,10 @@ label{
 
         display: flex;
         flex-direction: column;
-        
+        text-decoration: none;
 
     }
+
 
     .showcase-container{
 
@@ -1479,6 +1517,7 @@ label{
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow: auto;
         
     }
 
@@ -1506,14 +1545,14 @@ label{
 
     .slide-name .letter{
 
-        padding-left: 0.2rem;
+        padding-left: 0.1rem;
 
 
     }
 
-    .slide-name .big-text-letter{
+    .headline-container .big-text-letter{
 
-        padding-left: 0.2rem;
+        padding-left: 0.1rem;
     
     }
 

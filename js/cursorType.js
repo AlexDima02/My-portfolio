@@ -26,18 +26,18 @@ const descProject = document.querySelector('.big-description');
 const itemsForProjects = {
 
     project1: {
-        name: 'Beat Maker',
+        name: 'BEATMAKER',
         roleProject: 'Product Engineering',
         year: 2021,
-        desc: 'Are you sure that every iPad has a screen size less than 780px? And every IEMobile device? And that every device that includes any one of those words in the Navigator string is actually one of those devices?'
+        desc: 'Small project that taught me the core concepts of the Javascript, i learned more about storing data in to the local storage in order to save the pads and create a playlist with them and many more about DOM manipulations.'
     },
 
     project2: {
 
-        name: 'Alex',
+        name: 'Weather WebApp',
         roleProject: 'Product Engineering',
-        year: 2019,
-        desc: 'Are you sure that every iPad has a screen size less than 780px? And every IEMobile device? And that every device that includes any one of those words in the Navigator string is actually one of those devices?'
+        year: 2021,
+        desc: 'One of my favourite projects, I learned more about APIs, core concepts, differences between XML and JSON and how we can build apps in an efficient workflow.'
 
     }
 
@@ -85,7 +85,7 @@ everyTitle.forEach((title) => {
 // Depending on the project change the images
 // Project 1
 firstProject.addEventListener('click', (e) => {
-
+    document.body.style.overflow = 'hidden';
     e.preventDefault();
     showcaseContainer.classList.add('active');
     nameProject.innerHTML = itemsForProjects.project1.name;
@@ -94,14 +94,14 @@ firstProject.addEventListener('click', (e) => {
     descProject.children[0].innerHTML= itemsForProjects.project1.desc;
     let imageProject1 = projectImage.forEach((img, idx) => {
 
-        img.src = `../images/image-project1/${idx+1}.jpg`
+        img.src = `../images/image-project1/${idx+1}.png`
         console.log(img);
     })
 });
 
 // Project 2
 secondProject.addEventListener('click', (e) => {
-
+    document.body.style.overflow = 'hidden';
     e.preventDefault();
     showcaseContainer.classList.add('active');
     nameProject.innerHTML = itemsForProjects.project2.name;
@@ -110,7 +110,7 @@ secondProject.addEventListener('click', (e) => {
     descProject.children[0].innerHTML= itemsForProjects.project2.desc;
     let imageProject2 = projectImage.forEach((img, idx) => {
 
-        img.src = `../images/image-project2/${idx+1}.jpg`
+        img.src = `../images/image-project2/${idx+1}.png`
      
     })
 
@@ -122,7 +122,7 @@ secondProject.addEventListener('click', (e) => {
 closeContainer.addEventListener('click', () => {
 
     showcaseContainer.classList.remove('active');
-    
+    document.body.style.overflow = 'auto';
 
 })
 
@@ -153,7 +153,7 @@ cursorImageArr.forEach((img, idx) => {
 
         switch(idx){
             case 0:
-                
+                document.body.style.overflow = 'hidden';
                 showcaseContainer.classList.add('active');
                 nameProject.innerHTML = itemsForProjects.project1.name;
                 roleProject.children[1].innerHTML = itemsForProjects.project1.roleProject;
@@ -161,13 +161,13 @@ cursorImageArr.forEach((img, idx) => {
                 descProject.children[0].innerHTML= itemsForProjects.project1.desc;
                 let imageProject1 = projectImage.forEach((img, idx) => {
 
-                    img.src = `../images/image-project1/${idx+1}.jpg`
+                    img.src = `../images/image-project1/${idx+1}.png`
                     console.log(img);
                 })
             break;
 
             case 1:
-                
+                document.body.style.overflow = 'hidden';
                 showcaseContainer.classList.add('active');
                 nameProject.innerHTML = itemsForProjects.project2.name;
                 roleProject.children[1].innerHTML = itemsForProjects.project2.roleProject;
@@ -175,7 +175,7 @@ cursorImageArr.forEach((img, idx) => {
                 descProject.children[0].innerHTML= itemsForProjects.project2.desc;
                 let imageProject2 = projectImage.forEach((img, idx) => {
             
-                    img.src = `../images/image-project2/${idx+1}.jpg`
+                    img.src = `../images/image-project2/${idx+1}.png`
                  
                 })
             break;

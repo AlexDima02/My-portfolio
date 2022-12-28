@@ -1,11 +1,31 @@
 const logo = document.querySelector('.logo');
 const menuIcon = document.querySelector('.option-mobile');
 const containerMenu = document.querySelector('.navbar-mobile');
+const navBar = document.querySelector('.navbar');
 const navBarMobile = document.querySelector('.navbar-mobile');
 const closeTab = document.querySelector('#close-tab');
 const menu = document.querySelector('.flex-container');
 
+// Header space
+// Hover over the options from the header menu
+navBar.addEventListener('mouseover', (bar) => {
 
+    const showBar = bar.target.children[0];
+   
+    showBar.classList.add('active');
+
+})
+
+navBar.addEventListener('mouseout', (bar) => {
+
+    const showBar = bar.target.children[0];
+
+    
+    showBar.classList.remove('active');
+
+    
+
+})
 
 // Navbar-mobile options
 navBarMobile.addEventListener('mouseover', (bar) => {

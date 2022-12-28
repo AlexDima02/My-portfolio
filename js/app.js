@@ -153,7 +153,7 @@ window.addEventListener('load', () => {
         }
         
 
-    }, 0);
+    }, 700);
                     
 
 });
@@ -322,5 +322,7 @@ function numberDelay(){
 
 
 // Problems:
-// Stop the animation after one animate-iteration
 // Stop showing menu mobile type when i put the page in desktop mode
+// Remove html extension from the URL
+// Build an interactive contact page with some 3d models
+

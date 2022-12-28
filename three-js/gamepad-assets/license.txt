@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sony PlayStation 5 DualSense
+* source:	https://sketchfab.com/3d-models/sony-playstation-5-dualsense-e62786c6c9514765af059b7d8ca4e648
+* author:	Oxicid (https://sketchfab.com/Oxicid)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sony PlayStation 5 DualSense" (https://sketchfab.com/3d-models/sony-playstation-5-dualsense-e62786c6c9514765af059b7d8ca4e648) by Oxicid (https://sketchfab.com/Oxicid) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,65 +1,135 @@
-import * as THREE from 'https://cdn.skypack.dev/three';
+import * as THREE from 'https://cdn.skypack.dev/three@0.132.2/build/three.module.js';
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js';
 
 console.log(GLTFLoader);
-// Place where we want to render the scane
-const place = document.querySelector('.hobby-images');
+console.log(OrbitControls);
+let container;
+let containerArr;
+let camera;
+let aspect;
+let renderer;
+let scene;
+let house;
+let control;
+
+function init(){
+
+    container = document.querySelectorAll('#web-gl-item');
+    containerArr = [...container];
+    console.log(containerArr);
 
 // Scene
-const scene = new THREE.Scene();
-
-// Building the loader of the 3D obj
-const loader = new GLTFLoader();
-
-// loader.load('../three-js/gamepad-assets/old_console_gamepad/scene.gltf', (loader) => {
-//     console.log(loader);
-//     const root = loader.scene;
-//     scene.add(root);
-
-// })
-
-const geometry = new THREE.BoxGeometry(1,1,1);
-const material = new THREE.MeshBasicMaterial({
-
-    color: 0x00ff00
-})
-const boxMesh = new THREE.Mesh(geometry,material);
-scene.add(boxMesh);
-
-// //Adding the light 
-// const light = new THREE.DirectionalLight(0xffffff, 1);
-// light.position.set(2, 2, 5);
-// scene.add(light);
-
-// Some settings
-const sizes = {
-
-    width: window.innerWidth,
-    height: window.innerHeight
-
-
-}
+    scene = new THREE.Scene();
 
 // Camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width/sizes.height, 0.1, 100)
-camera.position.set(0,1,2);
-scene.add(camera);
+const fov = 35;
+// const aspect = container.clientWidth / container.clientHeight;
+const near = 0.1;
+const far = 1000;
 
-// Renderer
-const renderer = new THREE.WebGL1Renderer({place: place});
+// camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+// camera.position.set(0, 0, 180);
 
-renderer.setSize(sizes.width, sizes.height);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.shadowMap.enabledd = true;
-renderer.gammaOutput = true;
+// Light
+const ambient = new THREE.AmbientLight(0x404040, 3);
+scene.add(ambient);
 
+// // Renderer
+// renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+// renderer.setSize(container.clientWidth, container.clientHeight);
+// renderer.setPixelRatio(window.devicePixelRatio);
+
+// // Control the cmaera and position of the object
+// const control = new OrbitControls(camera, renderer.domElement);
+
+// container.appendChild(renderer.domElement);
+
+// Loading the object - Loader
+let loader = new GLTFLoader();
+
+containerArr.forEach((item, id) => {
+
+    switch(id){
+        case 0:
+            // Camera
+            aspect = item.clientWidth / item.clientHeight;
+            camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+            camera.position.set(0, 0, 180);
+            
+            // Renderer
+            renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+            renderer.setSize(item.clientWidth, item.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            // Control the cmaera and position of the object
+            control = new OrbitControls(camera, renderer.domElement);
+
+            item.appendChild(renderer.domElement);
+
+            // Load object
+            loader.load('../three-js/gamepad-assets/scene.gltf', function(gltf){
+
+                console.log(gltf.scene);
+                house = gltf.scene.children[0];
+                scene.add(gltf.scene);
+                animate();
+            })
+            
+
+        break;
+        case 1:
+            // Camera
+            aspect = item.clientWidth / item.clientHeight;
+            camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+            camera.position.set(0, 0, 180);
+            
+            // Renderer
+            renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+            renderer.setSize(item.clientWidth, item.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            // Control the cmaera and position of the object
+            control = new OrbitControls(camera, renderer.domElement);
+
+            item.appendChild(renderer.domElement);
+
+            // Load object
+            loader.load('../three-js/weight-assets/scene.gltf', function(gltf){
+
+                console.log(gltf.scene);
+                house = gltf.scene.children[0];
+                scene.add(gltf.scene);
+                animate();
+            })
+            
+
+        break;
+
+
+
+
+    }
+
+
+})
+
+// loader.load('../three-js/gamepad-assets/scene.gltf', function(gltf){
+
+//     console.log(gltf.scene);
+//     house = gltf.scene.children[0];
+//     scene.add(gltf.scene);
+//     animate();
+// })
+
+}
 
 function animate(){
 
     requestAnimationFrame(animate);
+    house.rotation.z += 0.005;
     renderer.render(scene, camera);
-
 
 }
 
-animate();
+init();

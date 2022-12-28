@@ -5,7 +5,7 @@ let sliderWidth;
 let imageWidth;
 let current = 0;
 let target = 0;
-let ease = .05;
+let ease = .003;
 
 // Scroll horizontally on the showcase tab
 // Based on the scroll diretion, move my photo container
@@ -14,7 +14,7 @@ let ease = .05;
 
 // Determining the start and end of the animation
 function lerp(start, end, t){
-
+    
     return start * (1-t) + end * t;
     
 }
@@ -22,17 +22,20 @@ function lerp(start, end, t){
 // Moving the slider according to our scroll position
 function setTransform(el, transform){
 
-    el.style.transform = transform
+    el.style.transform = transform;
 
 
 }
 
 // Make the scroll 
+// Establish the height of the parent to scroll on based on the photo-slider width
 function init(){
-
-    sliderWidth = showcaseContainer.getBoundingClientRect().width;
+    
+    sliderWidth = photoSwiper.getBoundingClientRect.width;
     imageWidth = sliderWidth / images.length;
-    document.body.style.height = `${sliderWidth - (window.innerWidth - window.innerHeight)}px`;
+    console.log(imageWidth);
+    showcaseContainer.style.height = `${sliderWidth}px`;
+
 }
 
 // Animating the movement of the slider
@@ -40,8 +43,9 @@ function animate(){
 
     current = parseFloat(lerp(current, target, ease).toFixed(2));
     // Amount of pixels that we scroll by
-    target = window.scrollY;
-    setTransform(photoSwiper, `translateX(${current}px)`);
+    target = showcaseContainer.scrollTop;
+    console.log(current);
+    setTransform(photoSwiper, `translateX(${current}%)`);
     requestAnimationFrame(animate);
 }
 
