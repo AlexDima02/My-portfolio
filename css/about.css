@@ -19,7 +19,6 @@ body{
 .big-title{
 
     width: 50%;
-    border: 1px solid red;
     font-size: 4rem;
    
 }
@@ -183,7 +182,7 @@ body{
     flex-direction: row;
     margin: 0 auto;
     justify-content: flex-start;
-    border: 1px solid red;
+   
 }
 
 .headline-container{
@@ -254,6 +253,32 @@ body{
 
 }
 
+.gamepad{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+
+}
+
+canvas{
+
+    display: block;
+
+}
+
+.weight{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+
+}
+
 .hobby-info p{
 
     padding-bottom: 1.5rem;
@@ -285,7 +310,7 @@ body{
     display: flex;
     flex-direction: row;
     margin-bottom: 10rem;
-    border: 1px solid red;
+    
 }
 
 
@@ -311,7 +336,6 @@ body{
     display: flex;
     justify-content: space-between;
     width: 60%;
-    border: 1px solid red;
     font-size: 1.5rem;
     
 }
@@ -406,7 +430,6 @@ body{
     .big-title{
     
         width: 100%;
-        border: 1px solid red;
         font-size: 2rem;
     
     }
@@ -447,7 +470,6 @@ body{
         margin-top: 2rem;
         display: flex;
         flex-direction: column;
-        border: 1px solid red;
         align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
@@ -490,7 +512,7 @@ body{
         width: 100%;
         margin: 0 auto;
         justify-content: flex-start;
-        border: 1px solid red;
+        
     }
 
     .container_reverse{

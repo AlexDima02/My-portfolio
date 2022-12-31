@@ -323,6 +323,6 @@ function numberDelay(){
 
 // Problems:
 // Stop showing menu mobile type when i put the page in desktop mode
-// Remove html extension from the URL
+// Create a thank you custom redirect page
 // Build an interactive contact page with some 3d models
-
+// Replace images with me
