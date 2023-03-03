@@ -268,6 +268,11 @@ header .logo-letter{
     transform: translateY(0%);
 }
 
+.close-tab{
+
+    cursor: pointer;
+
+}
 
 .navbar a,.description-project a{
 
@@ -1064,6 +1069,7 @@ textarea{
     position: fixed;
     top: 0;
     left: 0;
+    /* height: 100vh; */
     transition: all 0.5s ease-in;
     display: flex;
     background-color: rgb(83, 92, 92);
@@ -1153,7 +1159,7 @@ textarea{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    border: 2px solid rgb(0, 255, 200);
+    
 
 }
 
@@ -1175,7 +1181,7 @@ textarea{
 
 }
 
-.project-link-mobile{
+#project-link-mobile{
 
     display: none;
 
@@ -1478,6 +1484,7 @@ textarea{
         position: sticky;
         top: 0;
         left: 0;
+        height: 100vh;
         transition: all 0.5s ease-in;
         display: flex;
         background-color: rgb(83, 92, 92);
@@ -1514,7 +1521,7 @@ textarea{
 
     }
 
-    .project-link{
+    #project-link{
 
 
         display: none;
@@ -1522,7 +1529,7 @@ textarea{
 
     }
 
-    .project-link-mobile{
+    #project-link-mobile{
 
         display: block;
         text-decoration: none;
@@ -1589,6 +1596,18 @@ textarea{
 
         padding-left: 0.1rem;
     
+    }
+
+    .cursor{
+
+        display: none;
+
+    }
+
+    .cursor.active{
+
+        display: none;
+
     }
 
     
