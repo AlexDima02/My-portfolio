@@ -156,7 +156,7 @@ function setupItem1(){
 
     container = document.querySelector('.gamepad');
 
-    scene1.background = new Color("red");
+    
 
     // Camera
     aspect = container.clientWidth / container.clientHeight;
@@ -202,7 +202,7 @@ function setupItem2(){
 
     container = document.querySelector('.weight');
     
-    scene2.background = new Color("red");
+    // scene2.background = new Color("red");
 
     // Camera
     aspect = container.clientWidth / container.clientHeight;
