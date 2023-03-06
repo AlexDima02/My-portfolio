@@ -11,14 +11,17 @@ let projectLinkMobile = document.getElementById('project-link-mobile');
 let mouseCursor = document.querySelector('.cursor');
 let cursorImage = document.querySelectorAll('.image-project');
 let cursorImageArr = [...cursorImage];
+console.log(cursorImageArr)
 
 // Project section - animation
 const everyTitle = document.querySelectorAll('.project-name');
 const textSpan = document.querySelector('.special-word');
 
-// Components for the project1
+// Components for the projects
 const firstProject = document.querySelector('#project1');
 const secondProject = document.querySelector('#project2');
+const thirdProject = document.querySelector('#project3');
+const fourthProject = document.querySelector('#project4');
 const nameProject = document.querySelector('.info-name');
 const roleProject = document.querySelector('#role');
 const yearProject = document.querySelector('#year');
@@ -44,6 +47,26 @@ const itemsForProjects = {
         year: 2021,
         desc: 'One of my favourite projects, I learned more about APIs, core concepts, differences between XML and JSON and how we can build apps in an efficient workflow.',
         link: 'https://the-weather-web-app.netlify.app/'
+
+    },
+    
+    project3: {
+
+        name: 'Finance WebApp',
+        roleProject: 'Front End Developer',
+        year: 2023,
+        desc: 'This is a web app that helped me track my budget when I went with an Erasmus grant to study in another country. It was made with React JS, Dixies JS library as a database and Tailwind for the responsive styling.',
+        link: 'https://money-keeper-track-your-money.netlify.app/'
+
+    },
+
+    project4: {
+
+        name: 'News WebApp',
+        roleProject: 'Front End Developer',
+        year: 2023,
+        desc: 'News web app that tracks the newest news published and is leverging its API from News API. You can see all the news or you can filter them by date or sort them from the newest to the oldest or vice versa.',
+        link: 'https://my-news-portal-web-app.netlify.app/'
 
     }
 
@@ -102,10 +125,16 @@ firstProject.addEventListener('click', (e) => {
     projectLinkMobile.href = itemsForProjects.project1.link;
     
     let imageProject1 = projectImage.forEach((img, idx) => {
-   
-        img.src = `../images/image-project1/${idx+1}.png`
-        console.log(img);
+        if(img){
+
+            img.src = `../images/image-project1/${idx+1}.png`
+            console.log(img);
+            console.log(idx)
+
+        }
+        
     })
+
 });
 
 // Project 2
@@ -123,6 +152,46 @@ secondProject.addEventListener('click', (e) => {
     let imageProject2 = projectImage.forEach((img, idx) => {
 
         img.src = `../images/image-project2/${idx+1}.png`
+     
+    })
+
+});
+
+// Project 3
+thirdProject.addEventListener('click', (e) => {
+    
+    e.preventDefault();
+    showcaseContainer.classList.add('active');
+    nameProject.innerHTML = itemsForProjects.project3.name;
+    roleProject.children[1].innerHTML = itemsForProjects.project3.roleProject;
+    yearProject.children[1].innerHTML = itemsForProjects.project2.year;
+    descProject.children[0].innerHTML= itemsForProjects.project3.desc;
+    projectLink.href = itemsForProjects.project3.link;
+    projectLinkMobile.href = itemsForProjects.project3.link;
+    
+    let imageProject3 = projectImage.forEach((img, idx) => {
+
+        img.src = `../images/image-project3/${idx+1}.png`
+     
+    })
+
+});
+
+// Project 4
+fourthProject.addEventListener('click', (e) => {
+    
+    e.preventDefault();
+    showcaseContainer.classList.add('active');
+    nameProject.innerHTML = itemsForProjects.project4.name;
+    roleProject.children[1].innerHTML = itemsForProjects.project4.roleProject;
+    yearProject.children[1].innerHTML = itemsForProjects.project4.year;
+    descProject.children[0].innerHTML= itemsForProjects.project4.desc;
+    projectLink.href = itemsForProjects.project4.link;
+    projectLinkMobile.href = itemsForProjects.project4.link;
+    
+    let imageProject4 = projectImage.forEach((img, idx) => {
+
+        img.src = `../images/image-project4/${idx+1}.png`
      
     })
 
@@ -165,7 +234,7 @@ cursorImageArr.forEach((img, idx) => {
 
         switch(idx){
             case 0:
-               
+            
                 showcaseContainer.classList.add('active');
                 nameProject.innerHTML = itemsForProjects.project1.name;
                 roleProject.children[1].innerHTML = itemsForProjects.project1.roleProject;
@@ -196,6 +265,39 @@ cursorImageArr.forEach((img, idx) => {
                     img.src = `../images/image-project2/${idx+1}.png`
                  
                 })
+            break;
+            case 2:
+                
+                showcaseContainer.classList.add('active');
+                nameProject.innerHTML = itemsForProjects.project3.name;
+                roleProject.children[1].innerHTML = itemsForProjects.project3.roleProject;
+                yearProject.children[1].innerHTML = itemsForProjects.project3.year;
+                descProject.children[0].innerHTML= itemsForProjects.project3.desc;
+                projectLink.href = itemsForProjects.project3.link;
+                projectLinkMobile.href = itemsForProjects.project3.link;
+
+                let imageProject3 = projectImage.forEach((img, idx) => {
+            
+                    img.src = `../images/image-project3/${idx+1}.png`
+                 
+                })
+            break;
+            case 3:
+                
+                showcaseContainer.classList.add('active');
+                nameProject.innerHTML = itemsForProjects.project4.name;
+                roleProject.children[1].innerHTML = itemsForProjects.project4.roleProject;
+                yearProject.children[1].innerHTML = itemsForProjects.project4.year;
+                descProject.children[0].innerHTML= itemsForProjects.project4.desc;
+                projectLink.href = itemsForProjects.project4.link;
+                projectLinkMobile.href = itemsForProjects.project4.link;
+
+                let imageProject4 = projectImage.forEach((img, idx) => {
+            
+                    img.src = `../images/image-project4/${idx+1}.png`
+                 
+                })
+
             break;
 
 
@@ -243,3 +345,6 @@ serviceBtnArr.forEach((btn, idx) => {
     })
 
 })
+
+
+// Create one container for how many images are in other folders
