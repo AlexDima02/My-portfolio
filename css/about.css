@@ -361,6 +361,7 @@ body{
         transform: scale(0.8);
         transition: all 0.5s ease-in;
         color: grey;
+        text-decoration: none;
     }
 
     .item1.active{
@@ -375,6 +376,7 @@ body{
         transform: scale(0.8);
         transition: all 0.5s ease-in;
         color: grey;
+        text-decoration: none;
     }
 
     .item2.active{
@@ -389,6 +391,7 @@ body{
         transform: scale(0.8);
         transition: all 0.5s ease-in;
         color: grey;
+        text-decoration: none;
     }
 
     .item3.active{
