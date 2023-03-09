@@ -93,15 +93,15 @@ Promise.all([p1, p2, p3]).then(() => {
 
     // Renderers
     renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setSize(300, 500);
     renderer.setPixelRatio(window.devicePixelRatio);
 
     renderer2 = new THREE.WebGLRenderer({antialias: true, alpha: true});
-    renderer2.setSize(weight.clientWidth, weight.clientHeight);
+    renderer2.setSize(300, 500);
     renderer2.setPixelRatio(window.devicePixelRatio);
 
     renderer3 = new THREE.WebGLRenderer({antialias: true, alpha: true});
-    renderer3.setSize(book.clientWidth, book.clientHeight);
+    renderer3.setSize(300, 300);
     renderer3.setPixelRatio(window.devicePixelRatio);
     
 
