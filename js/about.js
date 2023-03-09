@@ -281,7 +281,7 @@ function mobileCarousel(e){
     switch(e.target){
         case e.target = element0:
             
-                
+                e.preventDefault();
                 element0.style.color = '#6B8E23';
                 element0.classList.add('active');
                 element1.style.color = 'gray';
@@ -292,7 +292,7 @@ function mobileCarousel(e){
         break;
         
         case e.target = element1:
-            
+            e.preventDefault();
              element0.style.color = 'gray';
              element0.classList.remove('active');
              element1.style.color = '#6B8E23';
@@ -303,7 +303,7 @@ function mobileCarousel(e){
         break;
         
         case e.target = element2:
-
+            e.preventDefault();
             element0.classList.remove('active');
             element0.style.color = 'gray';
             element1.style.color = 'gray';
