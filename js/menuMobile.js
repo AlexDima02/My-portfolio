@@ -96,13 +96,13 @@ function menuTab(){
    // Open menu tab in a slide up animation
     containerMenu.classList.add('active');
     menuIcon.classList.add('active');
-   if(containerMenu.classList.contains('active')){
+    if(containerMenu.classList.contains('active')){
 
-        closeTab.classList.add('active');
-       
+            closeTab.classList.add('active');
+        
 
 
-   }
+    }
 
 
     

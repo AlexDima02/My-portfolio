@@ -355,7 +355,49 @@ body{
 
 @media (max-width: 768px) {
     
-    
+    /* Carousel elements */
+    .item1{
+
+        transform: scale(0.8);
+        transition: all 0.5s ease-in;
+        color: grey;
+    }
+
+    .item1.active{
+
+        transform: scale(1.1);
+        transition: all 0.5s ease-in;
+
+    }
+
+    .item2{
+
+        transform: scale(0.8);
+        transition: all 0.5s ease-in;
+        color: grey;
+    }
+
+    .item2.active{
+
+        transform: scale(1.1);
+        transition: all 0.5s ease-in;
+
+    }
+
+    .item3{
+
+        transform: scale(0.8);
+        transition: all 0.5s ease-in;
+        color: grey;
+    }
+
+    .item3.active{
+
+        transform: scale(1.1);
+        transition: all 0.5s ease-in;
+
+    }
+
     .section-name{
 
         font-size: 16px;

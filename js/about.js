@@ -22,13 +22,15 @@ const displaySlide = (e) => {
     
     switch(e.target){
         case e.target = element0:
+
             console.log('slide1');
-           slide1.style.display = 'flex';
-           slide2.style.display = 'none';
-           slide3.style.display = 'none';
+            slide1.style.display = 'flex';
+            slide2.style.display = 'none';
+            slide3.style.display = 'none';
         break;
         
         case e.target = element1:
+
             console.log('slide2');
             // Display the slide
             slide1.style.display = 'none';
@@ -37,16 +39,15 @@ const displaySlide = (e) => {
  
             // Display the description
             
-            
-
-
         break;
         
         case e.target = element2:
+
             console.log('slide3');
             slide1.style.display = 'none';
             slide2.style.display = 'none';
             slide3.style.display = 'flex';
+        
         break;
         
 
@@ -93,9 +94,17 @@ window.addEventListener('scroll', reveal);
 window.addEventListener('load', textLoad);
 window.addEventListener('click', (e) => {
    
+    if(window.innerWidth < 700){
 
-    console.log(e.target);
-    carousel(e);
+        mobileCarousel(e);
+
+    }else{
+
+        console.log(e.target);
+        carousel(e);
+
+    }
+   
 
 });
 
@@ -260,6 +269,49 @@ function carousel(e){
             displaySlide(e);
         break;
         
+
+    }
+
+}
+
+
+// Carousel different on mobile
+function mobileCarousel(e){
+
+    switch(e.target){
+        case e.target = element0:
+            
+                
+                element0.style.color = '#6B8E23';
+                element0.classList.add('active');
+                element1.style.color = 'gray';
+                element1.classList.remove('active');
+                element2.style.color = 'gray';
+                element2.classList.remove('active');
+                displaySlide(e);
+        break;
+        
+        case e.target = element1:
+            
+             element0.style.color = 'gray';
+             element0.classList.remove('active');
+             element1.style.color = '#6B8E23';
+             element1.classList.add('active');
+             element2.style.color = 'gray';
+             element2.classList.remove('active');
+             displaySlide(e);
+        break;
+        
+        case e.target = element2:
+
+            element0.classList.remove('active');
+            element0.style.color = 'gray';
+            element1.style.color = 'gray';
+            element1.classList.remove('active');
+            element2.style.color = '#6B8E23';
+            element2.classList.add('active');
+            displaySlide(e);
+        break;
 
     }
 
