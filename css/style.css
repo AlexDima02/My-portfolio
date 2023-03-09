@@ -12,6 +12,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     overflow: hidden;
+   
 }
 
 /* Before loading the entire page */
@@ -161,7 +162,7 @@ header .logo-letter{
     min-height: 100vh;
     background-color: rgb(94, 93, 92);
     flex-grow: 1;
-    transform: translateY(100%);
+    transform: translateY(500%);
     top: 0;
     left: 0;
     min-width: 100%;
@@ -1069,7 +1070,7 @@ textarea{
     position: fixed;
     top: 0;
     left: 0;
-    /* height: 100vh; */
+    height: 100vh;
     transition: all 0.5s ease-in;
     display: flex;
     background-color: rgb(83, 92, 92);
@@ -1482,7 +1483,7 @@ textarea{
     .project-showcase-container.active{
 
         transition: display 2s ease-in;
-        position: sticky;
+       
         top: 0;
         left: 0;
         height: 100vh;

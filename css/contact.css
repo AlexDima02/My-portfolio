@@ -45,6 +45,7 @@ body{
 .contact-title .letter {
 
     display: inline-block;
+   
 
 }
 
@@ -55,6 +56,12 @@ body{
         width: 75%;
         font-size: 1rem;
         
+    }
+
+    .contact-container .contact-headline{
+
+        font-size: 2.5rem;
+        text-align: center;
     }
 
 }

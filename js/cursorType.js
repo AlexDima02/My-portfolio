@@ -1,5 +1,7 @@
 const showcaseContainer = document.querySelector('.project-showcase-container');
 const closeContainer = document.querySelector('.close-tab');
+const allProjects = document.querySelectorAll('.project-name');
+console.log(allProjects)
 const photoSwiper = document.querySelector('.project-photos');
 const serviceBtn = document.querySelectorAll('.open-tab');
 const serviceBtnArr = [...serviceBtn];
@@ -14,8 +16,8 @@ let cursorImageArr = [...cursorImage];
 console.log(cursorImageArr)
 
 // Project section - animation
-const everyTitle = document.querySelectorAll('.project-name');
-const textSpan = document.querySelector('.special-word');
+// const everyTitle = document.querySelectorAll('.project-name');
+// const textSpan = document.querySelector('.special-word');
 
 // Components for the projects
 const firstProject = document.querySelector('#project1');
@@ -74,6 +76,7 @@ const itemsForProjects = {
 
 
 // Hover over project headlines
+// Bring lines animation plus change icon of the cursor on hover
 everyTitle.forEach((title) => {
 
     title.addEventListener('mouseover', (e) => {
@@ -112,90 +115,178 @@ everyTitle.forEach((title) => {
 
 // Click on project headlines
 // Depending on the project change the images
-// Project 1
-firstProject.addEventListener('click', (e) => {
-   
-    e.preventDefault();
-    showcaseContainer.classList.add('active');
-    nameProject.innerHTML = itemsForProjects.project1.name;
-    roleProject.children[1].innerHTML = itemsForProjects.project1.roleProject;
-    yearProject.children[1].innerHTML = itemsForProjects.project1.year;
-    descProject.children[0].innerHTML= itemsForProjects.project1.desc;
-    projectLink.href = itemsForProjects.project1.link;
-    projectLinkMobile.href = itemsForProjects.project1.link;
-    
-    let imageProject1 = projectImage.forEach((img, idx) => {
-        if(img){
+allProjects.forEach((element) => {
 
-            img.src = `../images/image-project1/${idx+1}.png`
-            console.log(img);
-            console.log(idx)
+    element.addEventListener('click', (e) => {
+
+        switch(element.id){
+            
+            case 'project1':
+                
+                e.preventDefault();
+                console.log(element.id)
+                showcaseContainer.classList.add('active');
+                nameProject.innerHTML = itemsForProjects.project1.name;
+                roleProject.children[1].innerHTML = itemsForProjects.project1.roleProject;
+                yearProject.children[1].innerHTML = itemsForProjects.project1.year;
+                descProject.children[0].innerHTML= itemsForProjects.project1.desc;
+                projectLink.href = itemsForProjects.project1.link;
+                projectLinkMobile.href = itemsForProjects.project1.link;
+                
+                let imageProject1 = projectImage.forEach((img, idx) => {
+                
+                        img.src = `../images/image-project1/${idx+1}.png`
+                    
+                })
+
+            break;
+            case 'project2':
+                
+                e.preventDefault();
+                console.log(element.id)
+                showcaseContainer.classList.add('active');
+                nameProject.innerHTML = itemsForProjects.project2.name;
+                roleProject.children[1].innerHTML = itemsForProjects.project2.roleProject;
+                yearProject.children[1].innerHTML = itemsForProjects.project2.year;
+                descProject.children[0].innerHTML= itemsForProjects.project2.desc;
+                projectLink.href = itemsForProjects.project2.link;
+                projectLinkMobile.href = itemsForProjects.project2.link;
+                
+                let imageProject2 = projectImage.forEach((img, idx) => {
+
+                    img.src = `../images/image-project2/${idx+1}.png`
+                
+                })
+
+            break;
+            case 'project3':
+                
+                e.preventDefault();
+                console.log(element.id)
+                showcaseContainer.classList.add('active');
+                nameProject.innerHTML = itemsForProjects.project3.name;
+                roleProject.children[1].innerHTML = itemsForProjects.project3.roleProject;
+                yearProject.children[1].innerHTML = itemsForProjects.project2.year;
+                descProject.children[0].innerHTML= itemsForProjects.project3.desc;
+                projectLink.href = itemsForProjects.project3.link;
+                projectLinkMobile.href = itemsForProjects.project3.link;
+                
+                let imageProject3 = projectImage.forEach((img, idx) => {
+
+                    img.src = `../images/image-project3/${idx}.png`
+                
+                })
+
+            break;
+            case 'project4':
+                
+                e.preventDefault();
+                console.log(element.id)
+                showcaseContainer.classList.add('active');
+                nameProject.innerHTML = itemsForProjects.project4.name;
+                roleProject.children[1].innerHTML = itemsForProjects.project4.roleProject;
+                yearProject.children[1].innerHTML = itemsForProjects.project4.year;
+                descProject.children[0].innerHTML= itemsForProjects.project4.desc;
+                projectLink.href = itemsForProjects.project4.link;
+                projectLinkMobile.href = itemsForProjects.project4.link;
+                
+                let imageProject4 = projectImage.forEach((img, idx) => {
+
+                    img.src = `../images/image-project4/${idx}.png`
+                
+                })
+                
+
+            break;
+
+
 
         }
+
+
+    })
+
+
+})
+
+// firstProject.addEventListener('click', (e) => {
+   
+//     e.preventDefault();
+//     showcaseContainer.classList.add('active');
+//     nameProject.innerHTML = itemsForProjects.project1.name;
+//     roleProject.children[1].innerHTML = itemsForProjects.project1.roleProject;
+//     yearProject.children[1].innerHTML = itemsForProjects.project1.year;
+//     descProject.children[0].innerHTML= itemsForProjects.project1.desc;
+//     projectLink.href = itemsForProjects.project1.link;
+//     projectLinkMobile.href = itemsForProjects.project1.link;
+    
+//     let imageProject1 = projectImage.forEach((img, idx) => {
+       
+//             img.src = `../images/image-project1/${idx+1}.png`
         
-    })
+//     })
 
-});
+// });
 
-// Project 2
-secondProject.addEventListener('click', (e) => {
+
+// secondProject.addEventListener('click', (e) => {
     
-    e.preventDefault();
-    showcaseContainer.classList.add('active');
-    nameProject.innerHTML = itemsForProjects.project2.name;
-    roleProject.children[1].innerHTML = itemsForProjects.project2.roleProject;
-    yearProject.children[1].innerHTML = itemsForProjects.project2.year;
-    descProject.children[0].innerHTML= itemsForProjects.project2.desc;
-    projectLink.href = itemsForProjects.project2.link;
-    projectLinkMobile.href = itemsForProjects.project2.link;
+//     e.preventDefault();
+//     showcaseContainer.classList.add('active');
+//     nameProject.innerHTML = itemsForProjects.project2.name;
+//     roleProject.children[1].innerHTML = itemsForProjects.project2.roleProject;
+//     yearProject.children[1].innerHTML = itemsForProjects.project2.year;
+//     descProject.children[0].innerHTML= itemsForProjects.project2.desc;
+//     projectLink.href = itemsForProjects.project2.link;
+//     projectLinkMobile.href = itemsForProjects.project2.link;
     
-    let imageProject2 = projectImage.forEach((img, idx) => {
+//     let imageProject2 = projectImage.forEach((img, idx) => {
 
-        img.src = `../images/image-project2/${idx+1}.png`
+//         img.src = `../images/image-project2/${idx+1}.png`
      
-    })
+//     })
 
-});
+// });
 
-// Project 3
-thirdProject.addEventListener('click', (e) => {
+
+// thirdProject.addEventListener('click', (e) => {
     
-    e.preventDefault();
-    showcaseContainer.classList.add('active');
-    nameProject.innerHTML = itemsForProjects.project3.name;
-    roleProject.children[1].innerHTML = itemsForProjects.project3.roleProject;
-    yearProject.children[1].innerHTML = itemsForProjects.project2.year;
-    descProject.children[0].innerHTML= itemsForProjects.project3.desc;
-    projectLink.href = itemsForProjects.project3.link;
-    projectLinkMobile.href = itemsForProjects.project3.link;
+//     e.preventDefault();
+//     showcaseContainer.classList.add('active');
+//     nameProject.innerHTML = itemsForProjects.project3.name;
+//     roleProject.children[1].innerHTML = itemsForProjects.project3.roleProject;
+//     yearProject.children[1].innerHTML = itemsForProjects.project2.year;
+//     descProject.children[0].innerHTML= itemsForProjects.project3.desc;
+//     projectLink.href = itemsForProjects.project3.link;
+//     projectLinkMobile.href = itemsForProjects.project3.link;
     
-    let imageProject3 = projectImage.forEach((img, idx) => {
+//     let imageProject3 = projectImage.forEach((img, idx) => {
 
-        img.src = `../images/image-project3/${idx+1}.png`
+//         img.src = `../images/image-project3/${idx+1}.png`
      
-    })
+//     })
 
-});
+// });
 
-// Project 4
-fourthProject.addEventListener('click', (e) => {
+
+// fourthProject.addEventListener('click', (e) => {
     
-    e.preventDefault();
-    showcaseContainer.classList.add('active');
-    nameProject.innerHTML = itemsForProjects.project4.name;
-    roleProject.children[1].innerHTML = itemsForProjects.project4.roleProject;
-    yearProject.children[1].innerHTML = itemsForProjects.project4.year;
-    descProject.children[0].innerHTML= itemsForProjects.project4.desc;
-    projectLink.href = itemsForProjects.project4.link;
-    projectLinkMobile.href = itemsForProjects.project4.link;
+//     e.preventDefault();
+//     showcaseContainer.classList.add('active');
+//     nameProject.innerHTML = itemsForProjects.project4.name;
+//     roleProject.children[1].innerHTML = itemsForProjects.project4.roleProject;
+//     yearProject.children[1].innerHTML = itemsForProjects.project4.year;
+//     descProject.children[0].innerHTML= itemsForProjects.project4.desc;
+//     projectLink.href = itemsForProjects.project4.link;
+//     projectLinkMobile.href = itemsForProjects.project4.link;
     
-    let imageProject4 = projectImage.forEach((img, idx) => {
+//     let imageProject4 = projectImage.forEach((img, idx) => {
 
-        img.src = `../images/image-project4/${idx+1}.png`
+//         img.src = `../images/image-project4/${idx+1}.png`
      
-    })
+//     })
 
-});
+// });
 
 
 
