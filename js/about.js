@@ -56,7 +56,7 @@ const displaySlide = (e) => {
 }
 
 const moveLeft = (element, mov) => {
-    if(element.classList.contains('item')){
+    if(element.classList.contains('desktop')){
 
         
         slideWrapper.style.transition = '0.5s';
@@ -239,6 +239,7 @@ function carousel(e){
    
     switch(e.target){
         case e.target = element0:
+            e.preventDefault();
             moveLeft(element0, -500);
             slideWrapper.appendChild(element1);  // move the first slide to the end
             slideWrapper.appendChild(element2);
@@ -249,6 +250,7 @@ function carousel(e){
         break;
         
         case e.target = element1:
+            e.preventDefault();
             moveLeft(element1, -500);
              // Append the items which are not seen at the end of the parent container
              slideWrapper.appendChild(element2);  // move the first slide to the end
@@ -260,6 +262,7 @@ function carousel(e){
         break;
         
         case e.target = element2:
+            e.preventDefault();
             moveLeft(element2, -500);
             slideWrapper.appendChild(element0);  // move the first slide to the end
             slideWrapper.appendChild(element1);

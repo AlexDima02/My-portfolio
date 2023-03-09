@@ -218,15 +218,35 @@ body{
     
 }
 
-.item{
-
+.item1{
+    
+    color: gray;
     margin: 0 2rem;
-    opacity: 0.3;
+    opacity: 0.5;
     cursor: pointer;
+    text-decoration: none;
+
+}
+.item2{
+
+    color: gray;
+    margin: 0 2rem;
+    opacity: 0.5;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.item3{
+
+    color: gray;
+    margin: 0 2rem;
+    opacity: 0.5;
+    cursor: pointer;
+    text-decoration: none;
 
 }
 
-.item:hover{
+.item1,.item2,.item3:hover{
 
     opacity: 0.4;
 
@@ -362,6 +382,7 @@ body{
         transition: all 0.5s ease-in;
         color: grey;
         text-decoration: none;
+        
     }
 
     .item1.active{
